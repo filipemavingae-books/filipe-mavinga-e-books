@@ -1,0 +1,67 @@
+{
+  "name": "Filipe Mavinga E-books",
+  "short_name": "FM E-books",
+  "description": "Marketplace de e-books com publicação e venda segura",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ff6b35",
+  "theme_color": "#ff6b35",
+  "orientation": "portrait-primary",
+  "categories": ["books", "education", "productivity"],
+  "lang": "pt-AO",
+  "icons": [
+    {
+      "src": "/icon-192.jpg",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.jpg",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Loja",
+      "short_name": "Loja",
+      "description": "Navegar pelos e-books disponíveis",
+      "url": "/loja",
+      "icons": [{ "src": "/icon-192.jpg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Publicar",
+      "short_name": "Publicar",
+      "description": "Publicar novo e-book",
+      "url": "/publicar",
+      "icons": [{ "src": "/icon-192.jpg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Meu Painel",
+      "short_name": "Painel",
+      "description": "Acessar painel pessoal",
+      "url": "/meu-painel",
+      "icons": [{ "src": "/icon-192.jpg", "sizes": "192x192" }]
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "scope": "/",
+  "id": "filipe-mavinga-ebooks"
+}
