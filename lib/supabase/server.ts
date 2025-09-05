@@ -1,25 +1,14 @@
 import { createServerClient } from "@supabase/ssr";
-import { cookies } from "next/headers";
+import type { GetServerSidePropsContext } from "next";
 
-export async function createClient() {
-  const cookieStore = await cookies();
-
+export function createClient(ctx: GetServerSidePropsContext) {
   return createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       cookies: {
-        getAll() {
-          return cookieStore.getAll();
-        },
-        setAll(cookiesToSet) {
-          try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
-            );
-          } catch {
-            // Quando chamado a partir de um Server Component, isso pode ser ignorado
-          }
+        get(name: string) {
+          return ctx.req.cookies[name];
         },
       },
     }
