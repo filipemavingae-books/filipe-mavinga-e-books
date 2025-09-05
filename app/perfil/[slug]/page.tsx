@@ -5,7 +5,7 @@ import { User, Book, Calendar } from "lucide-react"
 
 interface PerfilPageProps {
   params: {
-    "username-uuid": string
+    slug: string
   }
 }
 
@@ -13,7 +13,7 @@ export default async function PerfilPage({ params }: PerfilPageProps) {
   const supabase = await createClient()
 
   // Extrair username e UUID do slug
-  const slugParts = params["username-uuid"].split("-")
+  const slugParts = params.slug.split("-")
   if (slugParts.length < 2) {
     notFound()
   }
@@ -118,7 +118,7 @@ export default async function PerfilPage({ params }: PerfilPageProps) {
 export async function generateMetadata({ params }: PerfilPageProps) {
   const supabase = await createClient()
 
-  const slugParts = params["username-uuid"].split("-")
+  const slugParts = params.slug.split("-")
   const uuid = slugParts[slugParts.length - 1]
   const username = slugParts.slice(0, -1).join("-")
 

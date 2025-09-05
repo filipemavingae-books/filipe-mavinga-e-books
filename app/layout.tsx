@@ -6,8 +6,6 @@ import { Suspense } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CartProvider } from "@/hooks/use-cart"
-import { OfflineProvider } from "@/hooks/use-offline"
-import { OfflineIndicator } from "@/components/offline-indicator"
 import { AIChatWidget } from "@/components/ai-chat-widget"
 import "./globals.css"
 
@@ -48,17 +46,14 @@ export default function RootLayout({
   return (
     <html lang="pt-AO">
       <body className={`font-sans ${playfairDisplay.variable} ${sourceSans.variable} antialiased`}>
-        <OfflineProvider>
-          <CartProvider>
-            <Header />
-            <main>
-              <Suspense fallback={null}>{children}</Suspense>
-            </main>
-            <Footer />
-            <AIChatWidget />
-            <OfflineIndicator />
-          </CartProvider>
-        </OfflineProvider>
+        <CartProvider>
+          <Header />
+          <main>
+            <Suspense fallback={null}>{children}</Suspense>
+          </main>
+          <Footer />
+          <AIChatWidget />
+        </CartProvider>
         <Analytics />
       </body>
     </html>
